@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Wishlist{% endblock %}
+
+{% block content %}
+<h1 class="page-title">My Wishlist</h1>
+
+{% if books|length == 0 %}
+  <p>Your wishlist is empty.</p>
+{% else %}
+  <div class="book-grid">
+    {% for book in books %}
+      <div class="card book-card">
+        <h3>{{ book.title }}</h3>
+        <p class="author">by {{ book.author }}</p>
+        <p class="price">₹{{ book.price }}</p>
+
+        <div class="book-actions">
+          <a href="{{ url_for('read_book', book_id=book.id) }}" class="btn">
+            Read Book
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}

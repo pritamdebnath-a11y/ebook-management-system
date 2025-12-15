@@ -1,0 +1,158 @@
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+.site-header {
+  background: #ffffff;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+nav a {
+  margin-left: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+/* Page layout */
+.page-container {
+  padding: 30px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Book grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.book-card h3 {
+  margin-top: 0;
+}
+
+.author {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.price {
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.desc {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Buttons */
+.btn {
+  background: #2563eb;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.secondary:hover {
+  background: #d1d5db;
+}
+
+.book-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Forms */
+.login-form input,
+.login-form select,
+.login-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.login-form textarea {
+  resize: vertical;
+}
+
+.login-form input:focus,
+.login-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Auth cards */
+.auth-card {
+  max-width: 400px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.auth-switch {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* Reviews */
+.review-box {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

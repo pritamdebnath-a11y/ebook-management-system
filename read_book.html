@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>{{ book.title }}</h2>
+  <p class="author">by {{ book.author }}</p>
+  <p class="price">₹{{ book.price }}</p>
+
+  <div class="book-content">
+    <p>{{ book.content }}</p>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Reviews & Ratings</h3>
+
+  {% if session.get('username') %}
+    <form method="POST" action="{{ url_for('add_review', book_id=book.id) }}" class="login-form">
+      <label>Rating</label>
+      <select name="rating" required>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+
+      <textarea name="comment" placeholder="Write your review..." required></textarea>
+
+      <button type="submit" class="btn">Submit Review</button>
+    </form>
+  {% else %}
+    <p>Please <a href="{{ url_for('login') }}">login</a> to add a review.</p>
+  {% endif %}
+
+  <hr>
+
+  {% if reviews|length == 0 %}
+    <p>No reviews yet.</p>
+  {% else %}
+    {% for r in reviews %}
+      <div class="review-box">
+        <strong>{{ r.username }}</strong> |
+        <span>
+          {% for i in range(r.rating) %}★{% endfor %}
+          {% for i in range(5 - r.rating) %}☆{% endfor %}
+        </span>
+        <p>{{ r.comment }}</p>
+        <small>{{ r.created_at }}</small>
+      </div>
+    {% endfor %}
+  {% endif %}
+</section>
+{% endblock %}

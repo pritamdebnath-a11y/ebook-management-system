@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<section class="card auth-card">
+  <h2>Welcome Back 👋</h2>
+  <p class="subtext">Login to access your e-book library</p>
+
+  <form method="POST" class="login-form">
+    <input
+      type="text"
+      name="username"
+      placeholder="Enter username"
+      required
+    >
+
+    <input
+      type="password"
+      name="password"
+      placeholder="Enter password"
+      required
+    >
+
+    <button type="submit" class="btn">Login</button>
+  </form>
+
+  <p class="auth-switch">
+    Don’t have an account?
+    <a href="{{ url_for('register') }}">Register here</a>
+  </p>
+</section>
+{% endblock %}
