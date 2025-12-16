@@ -167,7 +167,7 @@ Topics include:
 It helps students understand how complete web applications are built
 and deployed on the internet.
 """,
-    "images/web.jpg",
+    "images/wd.jpg",
         ),
         (
             "Database Management Systems",
@@ -210,7 +210,7 @@ This book discusses:
 The book helps students understand how quality assurance improves
 software reliability and performance.
 """,
-    "images/testing.jpg",
+    "images/st.jpg",
         ),
     ]
 
@@ -388,3 +388,4 @@ def logout():
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)
+
